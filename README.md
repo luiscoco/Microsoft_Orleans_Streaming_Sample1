@@ -2,7 +2,15 @@
 
 ## 1. Create an EventHub in Azure
 
+We log in to Azure Portal and we search for **EventHub** service and we create a new one
 
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/d5a752cf-160c-4709-969e-c7b3218edde0)
+
+We press the Create **Event hub namespace** button
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/b4445b14-473f-4abb-a107-16e1c9948a46)
+
+We input the required data: 
 
 We can see the new EventHubNameSpace in the EventHubs list
 
