@@ -17,7 +17,7 @@ We copy the
 
 We load the project dependencies
 
-![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/0a5a3e27-74b4-4eb7-a715-c2c6141ba573)
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/057102e5-36b7-4dda-895c-f34402ca6de1)
 
 We input the code
 
