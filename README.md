@@ -1,6 +1,4 @@
-# Microsoft Orleans Streaming first sample    
-
-# (.NET8 Client-Server)
+# Orleans Streaming first sample (.NET8 Client-Server)
 
 ## 1. Create an EventHub in Azure
 
