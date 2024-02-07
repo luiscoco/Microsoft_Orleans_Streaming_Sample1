@@ -4,6 +4,11 @@
 
 ## 2. Create a Table and Storage Account in Azure
 
+We can see the overview storage account
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/86438bb1-52ca-48cb-8e2f-7c4193d8ffff)
+
+We copy the 
 
 ## 3. Create a blank solution in Visual Studio 2022 Community Edition
 
@@ -19,8 +24,15 @@
 
 ## 7. Create the Grains
 
+
 ## 8. Create the Secrets.json file
 
+```json
+{
+  "EventHubConnectionString": "",
+  "DataConnectionString": ""
+}
+```
 
 ## 9. Run and Test the solution
 
