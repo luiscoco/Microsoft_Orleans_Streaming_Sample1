@@ -66,7 +66,7 @@ We can see the overview storage account
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/86438bb1-52ca-48cb-8e2f-7c4193d8ffff)
 
-We copy the 
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/80054ade-2c7a-4152-aef5-31dc6d604783)
 
 ## 3. Create a blank solution in Visual Studio 2022 Community Edition
 
