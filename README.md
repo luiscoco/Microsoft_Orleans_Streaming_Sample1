@@ -2,6 +2,20 @@
 
 ## 1. Create an EventHub in Azure
 
+
+
+We can see the new EventHub in the list
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/956dd138-7451-4456-a2e5-53d133fe9f3c)
+
+We can create an EventHub inside the EventHubNameSapce
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/2c3d7437-f325-41ea-bbe6-eaf5c3eecf62)
+
+We can also create and see the new Consumer Group
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/1516df7a-481b-4c7b-93b6-fabd3b78408a)
+
 ## 2. Create a Table and Storage Account in Azure
 
 We can see the overview storage account
