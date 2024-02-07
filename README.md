@@ -40,6 +40,8 @@ We can also create and see the **new Consumer Group**
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/34fe89c6-27bb-490c-b7b0-3e93859fca3d)
 
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/d24cb038-8050-477f-ac9e-bb3fed6effc0)
+
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/1516df7a-481b-4c7b-93b6-fabd3b78408a)
 
 ## 2. Create a Table and Storage Account in Azure
