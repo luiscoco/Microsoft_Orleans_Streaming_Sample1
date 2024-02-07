@@ -46,6 +46,12 @@ We can also create and see the **new Consumer Group**
 
 ## 2. Create a Table and Storage Account in Azure
 
+We create a resource and select Storage and then Storage Account
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/8a6b4948-3b26-4a33-be6c-2df2b1e3e218)
+
+We input the required data: 
+
 We can see the overview storage account
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/86438bb1-52ca-48cb-8e2f-7c4193d8ffff)
