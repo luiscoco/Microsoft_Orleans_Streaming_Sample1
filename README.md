@@ -12,9 +12,13 @@ We copy the
 
 ## 3. Create a blank solution in Visual Studio 2022 Community Edition
 
-This is the solution folders and files structure
+We run Visual Studio 2022 and we create a new project
 
-We have to create five projects inside the solution: **Client** (Console project), **Common** (Class library project), **GrainInterfaces** (Class library project), **Grains** (Class library project), **SiloHost** (Console project)
+We select the project template **blank solution**
+
+We input the solution name and location
+
+We create five projects inside the solution: **Client** (Console project), **Common** (Class library project), **GrainInterfaces** (Class library project), **Grains** (Class library project), **SiloHost** (Console project)
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/022d2ede-7e6f-4348-be5f-47141f59a7a8)
 
