@@ -38,6 +38,16 @@ We place the **Secrets.json** file in SiloHost and Client projects root. See the
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/faa81924-fd07-462e-a3ce-169405875b2a)
 
+We copy the StorageAccount connection string and paste in the Secrest.json file in the DataConnectionString field
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/b58fd1ae-0f48-4a00-8ce4-81b723cdf802)
+
+We also copy the EventHub connection string and paste in the Secrest.json file in the EventHubConnectionString
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/4c112638-e803-4631-8b9e-49e33c158e69)
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/88314520-ccb8-4339-a926-2841da9c32fa)
+
 ## 9. Run and Test the solution
 
 We right click on the solution name and we select the menu option "**Set the startup projects**" 
