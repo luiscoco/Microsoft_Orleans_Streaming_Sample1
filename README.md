@@ -32,6 +32,8 @@ We can **create an EventHub** inside the EventHubNameSapce
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/17c7043e-913c-45bb-ac9c-a5ad1f9e5a92)
 
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/6ca52243-498d-4fdd-9b92-dedd81c230b1)
+
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/2c3d7437-f325-41ea-bbe6-eaf5c3eecf62)
 
 We can also create and see the **new Consumer Group**
