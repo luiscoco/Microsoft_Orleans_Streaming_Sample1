@@ -50,7 +50,17 @@ We create a resource and select Storage and then Storage Account
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/8a6b4948-3b26-4a33-be6c-2df2b1e3e218)
 
-We input the required data: 
+We input the required data: Subscription, ResourceGroup, StorageAccountName, Location, Perfomance and Redundancy
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/bba21875-4414-4239-9496-8dc99ebe8fef)
+
+We create a new Table inside the StorageAccount
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/5a59eb4d-9536-446d-91d1-10a3a4681636)
+
+We input the TableName and we create it
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/efa05f3f-bce5-4af9-861c-9b9034d56ad8)
 
 We can see the overview storage account
 
