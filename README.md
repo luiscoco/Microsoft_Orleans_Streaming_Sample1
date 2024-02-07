@@ -182,6 +182,34 @@ internal class Program
 
 ## 6. Create the GrainIntefaces 
 
+This is the project files and dependencies structure
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/c6ff87cd-c1ec-4a86-abb8-62db86df7140)
+
+We input the code
+
+**IConsumerGrain**
+
+```csharp
+namespace GrainInterfaces;
+
+public interface IConsumerGrain : IGrainWithGuidKey
+{
+}
+```
+
+**IProducerGrain**
+
+```csharp
+namespace GrainInterfaces;
+
+public interface IProducerGrain : IGrainWithStringKey
+{
+    Task StartProducing(string ns, Guid key);
+
+    Task StopProducing();
+}
+```
 
 ## 7. Create the Grains
 
