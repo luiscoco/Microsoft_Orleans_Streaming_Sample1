@@ -34,6 +34,10 @@ We copy the
 }
 ```
 
+We place the **Secrets.json** file in SiloHost and Client projects root. See the following picture
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/faa81924-fd07-462e-a3ce-169405875b2a)
+
 ## 9. Run and Test the solution
 
 
