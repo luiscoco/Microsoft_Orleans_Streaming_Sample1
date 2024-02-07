@@ -220,6 +220,159 @@ public interface IProducerGrain : IGrainWithStringKey
 
 ## 7. Create the Grains
 
+This is the Grains files and dependencies structure
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/930179a6-de19-42fd-9067-bc861914ed68)
+
+We input the code in the files
+
+**ConsumerGrain.cs**
+
+```csharp
+using Common;
+using GrainInterfaces;
+using Microsoft.Extensions.Logging;
+using Orleans.Streams;
+using Orleans.Streams.Core;
+
+namespace Grains;
+
+// ImplicitStreamSubscription attribute here is to subscribe implicitely to all stream within
+// a given namespace: whenever some data is pushed to the streams of namespace Constants.StreamNamespace,
+// a grain of type ConsumerGrain with the same guid of the stream will receive the message.
+// Even if no activations of the grain currently exist, the runtime will automatically
+// create a new one and send the message to it.
+[ImplicitStreamSubscription(Constants.StreamNamespace)]
+public class ConsumerGrain : Grain, IConsumerGrain, IStreamSubscriptionObserver
+{
+    private readonly ILogger<IConsumerGrain> _logger;
+    private readonly LoggerObserver _observer;
+
+    /// <summary>
+    /// Class that will log streaming events
+    /// </summary>
+    private class LoggerObserver : IAsyncObserver<int>
+    {
+        private readonly ILogger<IConsumerGrain> _logger;
+
+        public LoggerObserver(ILogger<IConsumerGrain> logger)
+        {
+            _logger = logger;
+        }
+
+        public Task OnCompletedAsync()
+        {
+            _logger.LogInformation("OnCompletedAsync");
+            return Task.CompletedTask;
+        }
+
+        public Task OnErrorAsync(Exception ex)
+        {
+            _logger.LogInformation("OnErrorAsync: {Exception}", ex);
+            return Task.CompletedTask;
+        }
+
+        public Task OnNextAsync(int item, StreamSequenceToken? token = null)
+        {
+            _logger.LogInformation("OnNextAsync: item: {Item}, token = {Token}", item, token);
+            return Task.CompletedTask;
+        }
+    }
+
+    public ConsumerGrain(ILogger<IConsumerGrain> logger)
+    {
+        _logger = logger;
+        _observer = new LoggerObserver(_logger);
+    }
+
+    // Called when a subscription is added
+    public async Task OnSubscribed(IStreamSubscriptionHandleFactory handleFactory)
+    {
+        // Plug our LoggerObserver to the stream
+        var handle = handleFactory.Create<int>();
+        await handle.ResumeAsync(_observer);
+    }
+
+
+    public override Task OnActivateAsync(CancellationToken token)
+    {
+        _logger.LogInformation("OnActivateAsync");
+        return Task.CompletedTask;
+    }
+}
+```
+
+**ProducerGrain.cs**
+
+```csharp
+using Common;
+using GrainInterfaces;
+using Microsoft.Extensions.Logging;
+using Orleans.Runtime;
+using Orleans.Streams;
+
+namespace Grains;
+
+public class ProducerGrain : Grain, IProducerGrain
+{
+    private readonly ILogger<IProducerGrain> _logger;
+
+    private IAsyncStream<int>? _stream;
+    private IDisposable? _timer;
+
+    private int _counter = 0;
+
+    public ProducerGrain(ILogger<IProducerGrain> logger)
+    {
+        _logger = logger;
+    }
+
+    public Task StartProducing(string ns, Guid key)
+    {
+        if (_timer is not null)
+            throw new Exception("This grain is already producing events");
+
+        // Get the stream
+        var streamId = StreamId.Create(ns, key);
+        _stream = this.GetStreamProvider(Constants.StreamProvider)
+            .GetStream<int>(streamId);
+
+        // Register a timer that produce an event every second
+        var period = TimeSpan.FromSeconds(1);
+        _timer = RegisterTimer(TimerTick, null, period, period);
+
+        _logger.LogInformation("I will produce a new event every {Period}", period);
+
+        return Task.CompletedTask;
+    }
+
+    private async Task TimerTick(object _)
+    {
+        var value = _counter++;
+        _logger.LogInformation("Sending event {EventNumber}", value);
+        if (_stream is not null)
+        {
+            await _stream.OnNextAsync(value);
+        }
+    }
+
+    public Task StopProducing()
+    {
+        if (_timer is not null)
+        {
+            _timer.Dispose();
+            _timer = null;
+        }
+
+        if (_stream is not null)
+        {
+            _stream = null;
+        }
+
+        return Task.CompletedTask;
+    }
+}
+```
 
 ## 8. Create the Common project for storing Constants and Secrets
 
