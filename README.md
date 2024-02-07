@@ -14,9 +14,9 @@ We copy the
 
 This is the solution folders and files structure
 
-![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/022d2ede-7e6f-4348-be5f-47141f59a7a8)
+We have to create five projects inside the solution: **Client** (Console project), **Common** (Class library project), **GrainInterfaces** (Class library project), **Grains** (Class library project), **SiloHost** (Console project)
 
-We have to create five projects inside the solution: **Client**, **Common**, **GrainInterfaces**, **Grains**, **SiloHost**
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/022d2ede-7e6f-4348-be5f-47141f59a7a8)
 
 ## 4. Create the Server(Silo) console project
 
@@ -26,6 +26,7 @@ We load the project dependencies
 
 We input the code
 
+**Program.cs**
 
 ```csharp
 using Common;
@@ -83,6 +84,8 @@ We load the project dependencies
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/0b40de04-dae8-4b28-bffd-06bdf0dadd97)
 
 We input the code
+
+**Program.cs**
 
 ```csharp
 using GrainInterfaces;
@@ -188,7 +191,7 @@ This is the project files and dependencies structure
 
 We input the code
 
-**IConsumerGrain**
+**IConsumerGrain.cs**
 
 ```csharp
 namespace GrainInterfaces;
@@ -198,7 +201,7 @@ public interface IConsumerGrain : IGrainWithGuidKey
 }
 ```
 
-**IProducerGrain**
+**IProducerGrain.cs**
 
 ```csharp
 namespace GrainInterfaces;
