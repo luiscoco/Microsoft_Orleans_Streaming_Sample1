@@ -4,7 +4,7 @@
 
 
 
-We can see the new EventHub in the list
+We can see the new EventHubNameSpace in the EventHubs list
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/956dd138-7451-4456-a2e5-53d133fe9f3c)
 
