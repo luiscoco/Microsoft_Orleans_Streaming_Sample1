@@ -20,15 +20,19 @@ We press the **Review + Create** button and then we press the **Create** button
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/95972a83-b79e-4b48-a2c1-0292a1b9f8a9)
 
-We can see the new EventHubNameSpace in the EventHubs list
+We press the **Go to resource** button
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/5ffec69a-07bb-4f02-b0e6-b848f28b9bf1)
+
+We can see the new **EventHubNameSpace** in the EventHubs list
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/956dd138-7451-4456-a2e5-53d133fe9f3c)
 
-We can create an EventHub inside the EventHubNameSapce
+We can **create an EventHub** inside the EventHubNameSapce
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/2c3d7437-f325-41ea-bbe6-eaf5c3eecf62)
 
-We can also create and see the new Consumer Group
+We can also create and see the **new Consumer Group**
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/1516df7a-481b-4c7b-93b6-fabd3b78408a)
 
