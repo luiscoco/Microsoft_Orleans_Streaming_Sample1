@@ -10,7 +10,9 @@ We press the Create **Event hub namespace** button
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/b4445b14-473f-4abb-a107-16e1c9948a46)
 
-We input the required data: 
+We input the required data: Subscription, ResourceGroup, EventHubNameSpace, Location and Pricing Tier (we select Standart to enable the option for creating a new **ConsumerGroup**)
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/a0474e36-4a2c-40fd-9303-2a5b147cfa04)
 
 We can see the new EventHubNameSpace in the EventHubs list
 
