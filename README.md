@@ -186,7 +186,84 @@ internal class Program
 ## 7. Create the Grains
 
 
-## 8. Create the Secrets.json file
+## 8. Create the Common project for storing Constants and Secrets
+
+This is the project files and dependencies
+
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/24e16dda-15ce-4809-81bd-0bf3eaea8623)
+
+
+**Constants.cs**
+
+```csharp
+namespace Common;
+
+public static class Constants
+{
+    //Orleans data (local cluster) for connecting Silo and Client
+
+    public const string ServiceId = "streaming-sample"; // Unique identifier for your Orleans service
+
+    public const string ClusterId = "dev"; // Identifier for the cluster of silos in your Orleans application
+
+    public const string StreamProvider = "my-stream-provider"; // Name of the stream provider configured in your Orleans application
+
+
+
+    public const string StreamNamespace = "myOrleansStreamEventHubNameSpace"; // EventHub Namespace name
+
+    public const string EHConsumerGroup = "myorleansconsumergroup"; // EventHub consumer group
+
+    public const string EHPath = "myOrleansStreamEventHub"; // EventHub name
+}
+```
+
+**Secrets.cs**
+
+```csharp
+using System.Text.Json;
+
+namespace Common;
+
+public class Secrets
+{
+    public string DataConnectionString { get; set; } = null!;
+
+    public string EventHubConnectionString { get; set; } = null!;
+
+    internal Secrets()
+    {
+    }
+
+    public Secrets(string dataConnectionString, string eventHubConnectionString)
+    {
+        DataConnectionString = dataConnectionString
+            ?? throw new ArgumentException(
+                "Must provide a dataConnectionString", nameof(dataConnectionString));
+        EventHubConnectionString = eventHubConnectionString
+            ?? throw new ArgumentException(
+                "Must provide an eventHubConnectionString", nameof(eventHubConnectionString));
+    }
+
+    public static Secrets? LoadFromFile(string filename = "Secrets.json")
+    {
+        var currentDir = new DirectoryInfo(Directory.GetCurrentDirectory());
+        while (currentDir != null && currentDir.Exists)
+        {
+            var filePath = Path.Combine(currentDir.FullName, filename);
+            if (File.Exists(filePath))
+            {
+                return JsonSerializer.Deserialize<Secrets>(File.ReadAllText(filePath));
+            }
+
+            currentDir = currentDir.Parent;
+        }
+        throw new FileNotFoundException($"Cannot find file {filename}");
+    }
+}
+```
+
+## 9. Create the Secrets.json file
 
 ```json
 {
@@ -209,7 +286,7 @@ We also copy the EventHub connection string and paste in the Secrest.json file i
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/88314520-ccb8-4339-a926-2841da9c32fa)
 
-## 9. Run and Test the solution
+## 10. Run and Test the solution
 
 We right click on the solution name and we select the menu option "**Set the startup projects**" 
 
