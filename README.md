@@ -62,4 +62,5 @@ We build and run the solution. Two console windows are automatically are opened 
 
 ![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/8afa8591-3e8d-4d68-91f5-573bca5c382d)
 
+![image](https://github.com/luiscoco/Microsoft_Orleans_Streaming_Sample1/assets/32194879/299e7c4d-904a-40a3-bf87-a174fbbdcc5f)
 
